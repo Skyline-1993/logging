@@ -21,7 +21,7 @@ public class LoggingController {
 在我们使用过程中因为有其他框架使用了其他日志框架，为了能让其他框架也使用SLF4j + Logback，
 我们需要先排除其他框架的日志框架，然后引入中间替换包。
 ## 3. 配置
-Logback的配置文件名为：logback.xml。一些简单的配置，我们可以在springboot的主配置文件中进行配置，如：
+Logback的配置文件名为：logback.xml，或者logback-spring.xml.一些简单的配置，我们可以在springboot的主配置文件中进行配置，如：
 ```yaml
 logging:
   # 日志输出的等级
