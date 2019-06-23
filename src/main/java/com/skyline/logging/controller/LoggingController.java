@@ -1,12 +1,13 @@
 package com.skyline.logging.controller;
 
 import com.skyline.logging.entity.User;
+import com.skyline.logging.service.LoggingService;
 import com.skyline.logging.util.R;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -15,16 +16,26 @@ import org.springframework.web.bind.annotation.RestController;
  * @Date 2019/6/12
  */
 @RestController
-public class LoggingContorller {
+public class LoggingController {
 
-    private static final Logger logger = LoggerFactory.getLogger(LoggingContorller.class);
+    @Autowired
+    private LoggingService loggingService;
+
+    private static final Logger logger = LoggerFactory.getLogger(LoggingController.class);
 
     @RequestMapping("/hi")
     public R hi(@RequestBody User user){
-        logger.debug("start");
+
+        logger.trace("This is trace of the controller layer;");
+        logger.debug("This is debug of the controller layer;");
+        logger.info("This is info of the controller layer;");
+        logger.warn("This is warn of the controller layer;");
+        logger.error("This is error of the controller layer;");
+
         // {}会用后面的参数替换
+        loggingService.getUser();
         logger.info("尊敬的{}用户，非常感谢您注册我们的账户" ,user.getUserName());
-        logger.debug("end");
+
         return R.ok();
     }
 }
