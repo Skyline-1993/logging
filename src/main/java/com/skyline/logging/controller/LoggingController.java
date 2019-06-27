@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author zhangkepeng
- * @Email skyline_1993@163.com
- * @Date 2019/6/12
+ * @email skyline_1993@163.com
+ * @data 2019/6/12
  */
 @RestController
 public class LoggingController {
@@ -21,6 +21,7 @@ public class LoggingController {
     @Autowired
     private LoggingService loggingService;
 
+    /** 日志记录器 */
     private static final Logger logger = LoggerFactory.getLogger(LoggingController.class);
 
     @RequestMapping("/hi")
