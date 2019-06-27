@@ -50,7 +50,4 @@ logging:
     %msg：日志消息，
     %n是换行符
     eg: %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n
-```properties
-logging.level.com.skyline.logging.util.LoggingTest=info
-```
 
