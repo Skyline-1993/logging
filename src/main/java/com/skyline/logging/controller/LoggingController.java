@@ -22,7 +22,7 @@ public class LoggingController {
     private LoggingService loggingService;
 
     /** 日志记录器 */
-    private static final Logger logger = LoggerFactory.getLogger(LoggingController.class);
+    private Logger logger = LoggerFactory.getLogger(LoggingController.class);
 
     @RequestMapping("/hi")
     public R hi(@RequestBody User user){
