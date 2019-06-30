@@ -4,9 +4,10 @@ import java.util.HashMap;
 
 /**
  * 接口返回JSON数据的封装类
+ *
  * @author zhangkepeng
- * @Email skyline_1993@163.com
- * @Date 2019/5/13
+ * @email skyline_1993@163.com
+ * @date 2019/5/13
  */
 public class R extends HashMap<String, Object> {
 
@@ -41,13 +42,13 @@ public class R extends HashMap<String, Object> {
     }
 
     public R(int code, String message) {
-        R r = new R();
-        r.put(RETURN_CODE, code);
-        r.put(RETURN_MESSAGE, message);
+        put(RETURN_CODE, code);
+        put(RETURN_MESSAGE, message);
     }
 
     /**
      * 成功时默认的返回格式
+     *
      * @return
      */
     public static R ok() {
@@ -56,25 +57,28 @@ public class R extends HashMap<String, Object> {
 
     /**
      * 成功时自定义消息返回
+     *
      * @param message
      * @return
      */
     public static R ok(String message) {
-        return new R().put(RETURN_MESSAGE,message);
+        return new R().put(RETURN_MESSAGE, message);
     }
 
     /**
      * 成功时自定义状态码与消息返回
+     *
      * @param code
      * @param message
      * @return
      */
-    public static R ok(int code,String message){
-        return new R(code,message);
+    public static R ok(int code, String message) {
+        return new R(code, message);
     }
 
     /**
      * 失败时默认返回
+     *
      * @return
      */
     public static R error() {
@@ -83,25 +87,28 @@ public class R extends HashMap<String, Object> {
 
     /**
      * 失败时自定义消息返回
+     *
      * @param message
      * @return
      */
     public static R error(String message) {
-        return new R(FAILED_CODE,message);
+        return new R(FAILED_CODE, message);
     }
 
     /**
      * 失败时自定义状态码与消息返回
+     *
      * @param code
      * @param message
      * @return
      */
-    public static R error(int code,String message){
-        return new R(code,message);
+    public static R error(int code, String message) {
+        return new R(code, message);
     }
 
     /**
      * 添加返回数据
+     *
      * @param key
      * @param value
      * @return
