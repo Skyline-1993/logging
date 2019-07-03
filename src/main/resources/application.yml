@@ -4,15 +4,15 @@ logging:
     com.skyline.logging.controller: warn
     com.skyline.logging.service: error
   # 日志配置文件的路径
-  config: classpath:logback-spring.xml
+  # config: classpath:logback-spring.xml
   # 日志文件存放的路径(只能指定路径，不能指定文件)，默认日志文件是spring.log
   # path: /logs/
   # 1.不指定路径，只配置文件名，默认在当前项目下生成日志 2.可以指定路径+文件名，在指定的路径下生成日志
-  file: /logs/all.log
+  #file: /logs/all.log
   # exception-conversion-word:
-  pattern:
+  #pattern:
     # 在控制台输出的格式
-    console: "%d{yyyy-MM-dd HH:mm:ss.SSS}  [%level]  %msg %n"
-    file: "%d{yyyy-MM-dd HH:mm:ss.SSS}  %msg %n"
+    #console: "%d{yyyy-MM-dd HH:mm:ss.SSS}  [%level]  %msg %n"
+    #file: "%d{yyyy-MM-dd HH:mm:ss.SSS}  %msg %n"
     # level: "%5p"
   # register-shutdown-hook:

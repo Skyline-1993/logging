@@ -6,7 +6,6 @@ import com.skyline.logging.util.R;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,11 +20,13 @@ public class LoggingController {
     @Autowired
     private LoggingService loggingService;
 
-    /** 日志记录器 */
+    /**
+     * 日志记录器
+     */
     private Logger logger = LoggerFactory.getLogger(LoggingController.class);
 
-    @RequestMapping("/hi")
-    public R hi(@RequestBody User user){
+    @RequestMapping("/getUser")
+    public R getUser(Integer id) {
 
         logger.trace("This is trace of the controller layer;");
         logger.debug("This is debug of the controller layer;");
@@ -34,9 +35,9 @@ public class LoggingController {
         logger.error("This is error of the controller layer;");
 
         // {}会用后面的参数替换
-        loggingService.getUser();
-        logger.info("尊敬的{}用户，非常感谢您注册我们的账户" ,user.getUserName());
+        User user = loggingService.getUser(id);
+        logger.debug("获取用户信息：[{}]", user.getUserName());
 
-        return R.ok();
+        return R.ok().put("data", user);
     }
 }

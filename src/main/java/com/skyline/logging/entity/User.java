@@ -12,12 +12,33 @@ import lombok.Setter;
 @Setter
 public class User {
 
-    private String id;
+    /**
+     * 用户id
+     */
+    private int id;
+    /**
+     * 用户名
+     */
     private String userName;
+    /**
+     * 昵称
+     */
     private String nickName;
+    /**
+     * 手机号
+     */
     private String mobile;
+    /**
+     * 邮箱
+     */
     private String email;
+    /**
+     * 密码
+     */
     private String password;
+    /**
+     * 密码
+     */
     private int age;
 
 }

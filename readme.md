@@ -4,15 +4,18 @@
 (2) 常见的日志门面框架有：Commons Logging、SLF4j、jboss-logging
 (3) 常见的日志实现框架有：Log4j、JUL（java.util.logging）、Log4j2、Logback，其中，log4j与log4j2没有版本关系。
 (4) 推荐使用：SLF4j + Logback(springboot底层使用)
-## 2. 使用
+## 2. slf4j+logback的使用
 ```java
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class LoggingController {
 
     private Logger logger = LoggerFactory.getLogger(LoggingController.class);
 
     @GetMapping("/hi")
     public String he() {
-        logger.info("abc");
+        logger.info("logging content");
         return "hello world";
     }
 }

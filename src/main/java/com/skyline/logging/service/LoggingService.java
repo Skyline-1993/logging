@@ -1,5 +1,7 @@
 package com.skyline.logging.service;
 
+import com.skyline.logging.entity.User;
+
 import java.util.Map;
 
 /**
@@ -9,5 +11,10 @@ import java.util.Map;
  */
 public interface LoggingService {
 
-    Map<String, Object> getUser();
+    /**
+     * 根据用户id获取用户信息
+     * @param id 用户id
+     * @return 用户对象
+     */
+    User getUser(int id);
 }
